@@ -1,9 +1,47 @@
+.container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.team-table {
+  margin-right: 20px; /* Espacio a la derecha de la tabla */
+  background-color: #3498db; /* Color de fondo más llamativo */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añadimos una sombra más fuerte */
+  color: white; /* Hacemos el texto blanco para mayor contraste */
+}
+
+.team-table h4 {
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 1.2em; /* Aumentamos el tamaño de la fuente */
+  color: white; /* Color del título en blanco */
+}
+
+/* Grid layout para mostrar los Pokémon seleccionados en pares */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+  grid-gap: 20px; /* Aumentamos el espacio entre los Pokémon */
+}
+
+.team-member {
+  width: 75px; /* Aumentamos el tamaño de las imágenes */
+  height: 75px;
+  object-fit: cover;
+  background-color: #f39c12; /* Fondo naranja detrás de cada Pokémon */
+  border-radius: 50%;
+  border: 3px solid #fff; /* Borde blanco para que resalten más */
+  padding: 5px; /* Agregamos un poco de padding */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para hacerlos resaltar */
+}
+
 .pokedex {
-  width: 700px;
-  height: 360px;
-
+  width: 800px; /* Aumentamos el ancho de la Pokedex */
+  height: 450px; /* Aumentamos la altura de la Pokedex */
   border-radius: 30px 8px 8px 30px;
-
   display: flex;
   flex-direction: row;
 }
@@ -58,32 +96,10 @@
   border: 4px solid var(--dark-blue);
 }
 
-.left-panel .name-display {
-  width: 80%;
-  height: 36px;
-  display: flex;
-  align-items: center; /* Y */
-  justify-content: center; /* X */
-
-  text-transform: uppercase;
-  font-size: larger;
-  font-weight: 800;
-}
-
-.right-panel {
-  position: relative;
-  width: 40%;
-  height: 100%;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
+/* Ajustamos el tamaño de la pantalla principal y de la imagen */
 .left-panel .main-screen {
   width: 260px;
-  height: 200px;
-
+  height: 220px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -91,8 +107,8 @@
 }
 
 .main-screen img {
-  width: 200px;
-  height: 200px;
+  width: 180px; /* Reducimos el tamaño de la imagen */
+  height: 180px;
 }
 
 .sprite {
@@ -100,11 +116,35 @@
   image-rendering: pixelated;
 }
 
+.right-panel {
+  position: relative;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .right-panel .controls {
   width: 100%;
   display: flex;
-
   justify-content: space-around;
+  margin-top: 15px; /* Añadimos margen superior */
+}
+
+.right-panel .controls button {
+  width: 50px; /* Ajustamos el ancho del botón */
+  height: 40px; /* Ajustamos la altura del botón */
+  font-size: 1.2em; /* Tamaño de la flecha */
+  background-color: #3498db; /* Color de fondo del botón */
+  color: rgb(20, 13, 13);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.right-panel .controls button:hover {
+  background-color: #2980b9; /* Cambia el color cuando se pasa el cursor */
 }
 
 .right-panel .leds {
@@ -116,7 +156,6 @@
 .right-panel .second-screen {
   width: 100px;
   height: 100px;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -140,4 +179,103 @@
 
 .ready--slow {
   transition: filter 500ms linear 800ms;
+}
+
+/* Estilo para mostrar las debilidades */
+
+/* Contenedor para la palabra "Debilidades" y las debilidades */
+.weaknesses-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px; /* Espacio entre la palabra y las debilidades */
+}
+
+.weaknesses-label {
+  font-weight: bold;
+  margin-right: 10px; /* Espacio entre la palabra "Debilidades" y las debilidades */
+  min-width: 100px; /* Fijamos un ancho mínimo para que la palabra no se mueva */
+}
+
+/* Contenedor para las debilidades */
+.pokemon-weaknesses {
+  display: grid;
+  grid-template-columns: repeat(
+    3,
+    auto
+  ); /* Tres columnas de tamaño automático */
+  gap: 5px; /* Espacio entre las debilidades */
+  max-width: 100%; /* Evitar desbordamiento */
+}
+
+.pokemon-weaknesses span {
+  background-color: #f8d7da;
+  padding: 3px 8px;
+  white-space: nowrap;
+  text-align: center;
+  display: inline-block;
+  border-radius: 5px;
+  font-style: italic;
+  font-weight: bolder;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Encasillado que contiene el nombre y los tipos */
+.name-display {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.name {
+  font-size: larger;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.pokemon-types {
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+.pokemon-types span {
+  background-color: #fbf8f8;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+/* Estilo para el botón de agregar al equipo */
+.pokedex button {
+  display: block;
+  margin-top: 15px;
+  padding: 10px 15px;
+  background-color: #3498db;
+  color: rgb(10, 1, 1);
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+}
+
+.pokedex button:hover {
+  background-color: #2980b9;
+}
+
+/* Mensaje de equipo completo */
+.team-full {
+  margin-top: 10px;
+  color: rgb(8, 4, 4);
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.2em;
 }
