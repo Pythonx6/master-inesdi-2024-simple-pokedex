@@ -23,7 +23,22 @@ const getWeaknesses = (types: Array<{ type: { name: string } }>) => {
     grass: ["fire", "ice", "flying", "bug"],
     fire: ["water", "ground", "rock"],
     water: ["electric", "grass"],
-    // Añade más tipos y debilidades según sea necesario...
+    bug: ["fire", "flying", "rock"],
+    poison: ["ground", "psychic"],
+    flying: ["electric", "ice", "rock"],
+    electric: ["ground"],
+    rock: ["water", "grass", "fighting", "ground", "steel"],
+    ground: ["water", "grass", "ice"],
+    psychic: ["bug", "ghost", "dark"],
+    ghost: ["ghost", "dark"],
+    dark: ["fighting", "bug", "fairy"],
+    steel: ["fire", "fighting", "ground"],
+    ice: ["fire", "fighting", "rock", "steel"],
+    dragon: ["ice", "dragon", "fairy"],
+    fairy: ["poison", "steel"],
+    fighting: ["flying", "psychic", "fairy"],
+    normal: ["fighting"],
+    // Añade más tipos y debilidades según sea necesario
   };
 
   const weaknesses = new Set<string>();
@@ -35,7 +50,9 @@ const getWeaknesses = (types: Array<{ type: { name: string } }>) => {
     }
   });
 
-  return weaknesses.size > 0 ? Array.from(weaknesses) : ["Sin debilidades"];
+  return weaknesses.size > 0
+    ? Array.from(weaknesses)
+    : ["Debilidades no definidas"];
 };
 
 export function Pokedex() {
