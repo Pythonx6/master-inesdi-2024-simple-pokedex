@@ -1,64 +1,77 @@
+/* Fondo general para todo el contenedor */
+body {
+  background-color: #e6f7ff; /* Color de fondo más llamativo */
+}
+
+/* Contenedor principal que envuelve la Pokedex y la tabla de Pokémon */
 .container {
   display: flex;
   align-items: flex-start;
+  background-color: #c6ff8e; /* Fondo alrededor de la pokedex y equipo seleccionado */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
 }
 
+/* Estilo para la tabla de selección de equipo */
 .team-table {
   margin-right: 20px; /* Espacio a la derecha de la tabla */
-  background-color: #3498db; /* Color de fondo más llamativo */
+  background-color: #74b9ff; /* Color de fondo llamativo */
   padding: 20px;
   border-radius: 10px;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añadimos una sombra más fuerte */
-  color: white; /* Hacemos el texto blanco para mayor contraste */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+  color: white;
 }
 
 .team-table h4 {
   margin-bottom: 15px;
   font-weight: bold;
-  font-size: 1.2em; /* Aumentamos el tamaño de la fuente */
-  color: white; /* Color del título en blanco */
+  font-size: 1.2em;
+  color: rgb(11, 5, 5);
 }
 
 /* Grid layout para mostrar los Pokémon seleccionados en pares */
 .team-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Dos columnas */
-  grid-gap: 20px; /* Aumentamos el espacio entre los Pokémon */
+  grid-gap: 20px; /* Espacio entre los Pokémon */
 }
 
 .team-member {
-  width: 75px; /* Aumentamos el tamaño de las imágenes */
+  width: 75px;
   height: 75px;
   object-fit: cover;
-  background-color: #f39c12; /* Fondo naranja detrás de cada Pokémon */
+  background-color: #f39c12;
   border-radius: 50%;
-  border: 3px solid #fff; /* Borde blanco para que resalten más */
-  padding: 5px; /* Agregamos un poco de padding */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para hacerlos resaltar */
+  border: 3px solid #fff;
+  padding: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
 }
 
 .pokedex {
-  width: 800px; /* Aumentamos el ancho de la Pokedex */
-  height: 450px; /* Aumentamos la altura de la Pokedex */
+  width: 800px;
+  height: 450px;
   border-radius: 30px 8px 8px 30px;
   display: flex;
   flex-direction: row;
+  background-color: #ff7675; /* Fondo de la Pokedex */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para la Pokedex */
 }
 
 .pokedex-red {
-  background-color: var(--base-red);
-  border: 6px solid var(--darker-red);
+  background-color: #ff7675;
+  border: 6px solid #d63031;
 }
 
 .pokedex-yellow {
-  background-color: var(--base-yellow);
-  border: 6px solid var(--darker-yellow);
+  background-color: #fdcb6e;
+  border: 6px solid #e17055;
 }
 
 .pokedex-blue {
-  background-color: var(--base-blue);
-  border: 6px solid var(--darker-blue);
+  background-color: #74b9ff;
+  border: 6px solid #0984e3;
 }
 
 .panel {
@@ -71,7 +84,7 @@
 .left-panel {
   width: 60%;
   height: 100%;
-  border-right: 6px solid var(--dark-grey);
+  border-right: 6px solid #2d3436;
   padding: 10px 20px;
   justify-content: space-evenly;
 }
@@ -83,17 +96,17 @@
 
 .pokedex-red .screen,
 .pokedex-red .button {
-  border: 4px solid var(--dark-red);
+  border: 4px solid #c0392b;
 }
 
 .pokedex-yellow .screen,
 .pokedex-yellow .button {
-  border: 4px solid var(--dark-yellow);
+  border: 4px solid #e17055;
 }
 
 .pokedex-blue .screen,
 .pokedex-blue .button {
-  border: 4px solid var(--dark-blue);
+  border: 4px solid #0984e3;
 }
 
 /* Ajustamos el tamaño de la pantalla principal y de la imagen */
@@ -107,7 +120,7 @@
 }
 
 .main-screen img {
-  width: 180px; /* Reducimos el tamaño de la imagen */
+  width: 180px;
   height: 180px;
 }
 
@@ -129,28 +142,29 @@
   width: 100%;
   display: flex;
   justify-content: space-around;
-  margin-top: 15px; /* Añadimos margen superior */
+  margin-top: 15px;
 }
 
 .right-panel .controls button {
-  width: 50px; /* Ajustamos el ancho del botón */
-  height: 40px; /* Ajustamos la altura del botón */
-  font-size: 1.2em; /* Tamaño de la flecha */
-  background-color: #3498db; /* Color de fondo del botón */
-  color: rgb(20, 13, 13);
+  width: 50px;
+  height: 40px;
+  font-size: 1.2em;
+  background-color: #3498db;
+  color: rgb(6, 3, 3);
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .right-panel .controls button:hover {
-  background-color: #2980b9; /* Cambia el color cuando se pasa el cursor */
+  background-color: #2980b9;
 }
 
 .right-panel .leds {
   justify-content: flex-end;
   gap: 20px;
   margin-right: 40px;
+  margin-top: -30px;
 }
 
 .right-panel .second-screen {
@@ -182,29 +196,23 @@
 }
 
 /* Estilo para mostrar las debilidades */
-
-/* Contenedor para la palabra "Debilidades" y las debilidades */
 .weaknesses-container {
   display: flex;
   align-items: center;
-  margin-bottom: 5px; /* Espacio entre la palabra y las debilidades */
+  margin-bottom: 5px;
 }
 
 .weaknesses-label {
   font-weight: bold;
-  margin-right: 10px; /* Espacio entre la palabra "Debilidades" y las debilidades */
-  min-width: 100px; /* Fijamos un ancho mínimo para que la palabra no se mueva */
+  margin-right: 10px;
+  min-width: 100px;
 }
 
-/* Contenedor para las debilidades */
 .pokemon-weaknesses {
   display: grid;
-  grid-template-columns: repeat(
-    3,
-    auto
-  ); /* Tres columnas de tamaño automático */
-  gap: 5px; /* Espacio entre las debilidades */
-  max-width: 100%; /* Evitar desbordamiento */
+  grid-template-columns: repeat(3, auto);
+  gap: 5px;
+  max-width: 100%;
 }
 
 .pokemon-weaknesses span {
@@ -222,7 +230,6 @@
   justify-content: center;
 }
 
-/* Encasillado que contiene el nombre y los tipos */
 .name-display {
   width: 100%;
   display: flex;
@@ -236,7 +243,7 @@
 
 .name {
   font-size: larger;
-  font-weight: bold;
+  font-weight: 800;
   text-transform: uppercase;
 }
 
@@ -247,7 +254,7 @@
 }
 
 .pokemon-types span {
-  background-color: #fbf8f8;
+  background-color: #eee;
   padding: 3px;
   border-radius: 5px;
 }
@@ -258,7 +265,7 @@
   margin-top: 15px;
   padding: 10px 15px;
   background-color: #3498db;
-  color: rgb(10, 1, 1);
+  color: rgb(12, 7, 7);
   font-weight: bold;
   border: none;
   border-radius: 5px;
@@ -274,7 +281,7 @@
 /* Mensaje de equipo completo */
 .team-full {
   margin-top: 10px;
-  color: rgb(8, 4, 4);
+  color: red;
   font-weight: bold;
   text-align: center;
   font-size: 1.2em;
